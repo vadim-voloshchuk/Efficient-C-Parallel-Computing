@@ -1,0 +1,14 @@
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\bin\Debug\net7.0-windows\MyLifeGameApp.exe
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\bin\Debug\net7.0-windows\MyLifeGameApp.deps.json
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\bin\Debug\net7.0-windows\MyLifeGameApp.runtimeconfig.json
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\bin\Debug\net7.0-windows\MyLifeGameApp.dll
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\bin\Debug\net7.0-windows\MyLifeGameApp.pdb
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\obj\Debug\net7.0-windows\MyLifeGameApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\obj\Debug\net7.0-windows\MyLifeGameApp.AssemblyInfoInputs.cache
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\obj\Debug\net7.0-windows\MyLifeGameApp.AssemblyInfo.cs
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\obj\Debug\net7.0-windows\MyLifeGameApp.csproj.CoreCompileInputs.cache
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\obj\Debug\net7.0-windows\MyLifeGameApp.dll
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\obj\Debug\net7.0-windows\refint\MyLifeGameApp.dll
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\obj\Debug\net7.0-windows\MyLifeGameApp.pdb
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\obj\Debug\net7.0-windows\MyLifeGameApp.genruntimeconfig.cache
+D:\work\FINAL SEMAK\paral\ASP\Laba 4\3\MyLifeGameApp\obj\Debug\net7.0-windows\ref\MyLifeGameApp.dll
