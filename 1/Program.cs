@@ -17,6 +17,7 @@ class Program
             worksheet.Cells[1, 1].Value = "Количество фрагментов";
             worksheet.Cells[1, 2].Value = "Время выполнения (мс) - Последовательное";
             worksheet.Cells[1, 3].Value = "Время выполнения (мс) - Многопоточное";
+            worksheet.Cells[1, 4].Value = "Время выполнения (мс) - Многопоточное(статика)";
 
             double x = 12345.6789;
 
@@ -30,7 +31,7 @@ class Program
 
                 for (int j = 0; j < i; j++)
                 {
-                    for (int l = 0; l < 10000; l++)
+                    // for (int l = 0; l < 10000; l++)
                             for (int s = 0; s < 10000; s++)
                             {
                                 x = Math.Sqrt(x);
@@ -48,7 +49,7 @@ class Program
                 worksheet.Cells[i + 1, 2].Value = elapsedMillisecondsSequential;
             }
 
-            x = 12345.6789; // Сброс переменной
+            x = 12345.6789;
             
             Console.WriteLine("\nПараллельная обработка\n__________________________________________");
 
@@ -57,7 +58,7 @@ class Program
                 char symbol = (char)('A' + index - 1); // Определение символа в зависимости от i
                 DateTime t3 = DateTime.Now;
                 for (int j = 0; j < index; j++){
-                        for (int l = 0; l < 10000; l++)
+                        // for (int l = 0; l < 10000; l++)
                             for (int s = 0; s < 10000; s++)
                             {
                                 x = Math.Sqrt(x);
@@ -70,35 +71,34 @@ class Program
                 Console.WriteLine($"{symbol}: {elapsedMillisecondsParallel} ms");
                 worksheet.Cells[index + 1, 3].Value = elapsedMillisecondsParallel;
             });
+        
             x = 12345.6789; // Сброс переменной
-            ExecuteCodeInParallel(numIterations, x);
+            
+            Console.WriteLine("\nПараллельная (вызов статики)\n__________________________________________");
 
+            Parallel.For(1, numIterations, index => {
+                char symbol = (char)('A' + index - 1);
+                DateTime t3 = DateTime.Now;
+                ExecuteCodeInParallel(index, x);
+                DateTime t4 = DateTime.Now;
+                double elapsedMillisecondsParallel = (t4 - t3).TotalMilliseconds;
+                Console.WriteLine($"{symbol}: {elapsedMillisecondsParallel} ms");
+                worksheet.Cells[index + 1, 4].Value = elapsedMillisecondsParallel;
+            });
 
                 package.SaveAs(new FileInfo("Результаты.xlsx"));
             }
     }
-    static void ExecuteCodeInParallel(int numIterations, double value)
+    static void ExecuteCodeInParallel(int index, double value)
     {
-        Console.WriteLine("\nСтатика\n__________________________________________");
-        Parallel.For(1, numIterations, index =>
-        {
-                char symbol = (char)('A' + index - 1);
-                DateTime t3 = DateTime.Now;
-                for (int j = 0; j < index; j++){
-
-                        for (int l = 0; l < 10000; l++)
-                            for (int s = 0; s < 10000; s++)
-                            {
-                                value = Math.Sqrt(value);
-                                value = value + 0.000000001;
-                                value = Math.Pow(value, 2);
-                            }
-                        
+        for (int j = 0; j < index; j++){
+            // for (int l = 0; l < 10000; l++)
+                for (int s = 0; s < 10000; s++)
+                {
+                    value = Math.Sqrt(value);
+                    value = value + 0.000000001;
+                    value = Math.Pow(value, 2);
                 }
-                DateTime t4 = DateTime.Now;
-                double elapsedMillisecondsParallel = (t4 - t3).TotalMilliseconds;
-                Console.WriteLine($"{symbol}: {elapsedMillisecondsParallel} ms");
-                // worksheet.Cells[index + 1, 3].Value = elapsedMillisecondsParallel;
-            });
+        }
     }
 }
